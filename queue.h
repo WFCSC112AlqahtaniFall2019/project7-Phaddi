@@ -21,6 +21,7 @@ public:
 
 private:
     Node* tail;
+
 };
 
 #endif //PROJECT7_QUEUE_H

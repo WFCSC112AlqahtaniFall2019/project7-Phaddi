@@ -4,7 +4,7 @@
 
 #include <iostream>
 #include <fstream>
-#include "LinkedList.h"
+
 #include <string>
 #include "Queue.h"
 
@@ -19,10 +19,10 @@ Queue::Queue() //def const
 void Queue::enqueue_tail(Data d)
 {
     Node* point = new Node(d, nullptr); //creates a new node
-    if(tail ==  nullptr)
+    if(head ==  nullptr)
     {
         head = point;
-        tail = point;
+        tail = head;
     }
     else
     {
@@ -34,7 +34,7 @@ void Queue::enqueue_tail(Data d)
 bool Queue::dequeue_head()
 {
     Node* deleter = head;
-    if(head->next == tail)
+    if(head== nullptr)
     {
         return false;
     }

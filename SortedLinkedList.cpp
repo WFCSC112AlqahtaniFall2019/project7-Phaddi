@@ -7,29 +7,31 @@
 #include "SortedLinkedList.h"
 #include "LinkedList.h"
 #include <string>
+#include "data.h"
 
 using namespace std;
 
-void SortedLinkedList::insertSorted(Data d)
-{
-    Node* current;
-    Node* trailer;
-    Node* newNode = new Node(d, nullptr);
+void SortedLinkedList:: insertSorted(Data obj) {
+    Node *newData = new Node(obj, nullptr);
+    Node *current;
+    Node* prev;
+    if (head == nullptr) {
+        head = newData;
 
-    if(head == nullptr)
-    {
-        newNode->next = head;
-    }
-    else
-    {
-        current = head;
-        while(current != nullptr && newNode->data > current->data)
-        {
-            trailer = trailer->next;
-            current = current->next;
+    } else {
+        if (head->data > newData->data) {
+            newData->next = head;
+            head = newData;
+        } else {
+            current=head;
+            while(current!= nullptr&&current->data<newData->data){
+                prev=current;
+                current=current->next;
+            }
+
+            prev->next=newData;
+            newData->next=current;
+
         }
-        //at correct spot: either sorts in, or is at end
-        trailer->next = newNode;
-        newNode->next = current;
     }
 }

@@ -42,4 +42,5 @@ ostream& operator << (ostream& os, const Data a)
     os << "Age: " << a.age << endl;
     os << "Country: " << a.country << endl;
     os << "Overall: " << a.overall << endl;
+    return os;
 }

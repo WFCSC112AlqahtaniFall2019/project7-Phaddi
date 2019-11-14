@@ -8,7 +8,6 @@
 #include <iostream>
 #include <fstream>
 #include "LinkedList.h"
-#include "data.h"
 #include <string>
 
 using namespace std;
@@ -18,8 +17,8 @@ class Stack : public LinkedList //parent
 public:
     Stack(); //def const
 
-    void push_head(Data d);
-    bool pop_head(Data d);
+    void push_head(const Data &d);
+    bool pop_head(const Data &d);
 };
 
 #endif //PROJECT7_STACK_H

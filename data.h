@@ -13,16 +13,16 @@ using namespace std;
 
 class Data
 {
-    friend ostream& operator << (ostream& os, Data a);
+
 
 public:
     Data();
     Data(string name, int age, string country, int overall);
-
+    friend ostream& operator << (ostream& os, Data a);
     bool operator > (const Data &d);
     bool operator < (const Data &d);
 
-private:
+//fix it
     string name;
     int age;
     string country;

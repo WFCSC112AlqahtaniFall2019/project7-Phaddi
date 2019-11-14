@@ -17,17 +17,13 @@ public:
 
     Node()
     {
-        data = Data();
         next = nullptr;
     }
 
-    Node(Data &d, Node *n= nullptr)
+    Node(const Data &d, Node *n= nullptr)
     {
-        data.setName(d.getName());
-        data.setAge(d.getAge());
-        data.setCountry(d.getCountry());
-        d.setOverall(d.getOverall());
-        next = nullptr;
+        data=d;
+        next = n;
     }
 };
 
